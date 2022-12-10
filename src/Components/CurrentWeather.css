@@ -1,8 +1,12 @@
 .current {
+    width: 100%;
+    max-width: 750px;
     display: flex;
     gap: 20px;
     /* justify-content: center; */
     align-items:  center;
+    margin: 0 300px;
+    scale: 1.5;
 }
 
 .current-temp {
@@ -25,18 +29,22 @@ sup {
 }
 
 .current-weather {
+    /* width: 50%;
+    max-width: 1000px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0px;
+    /* margin: auto 0; */
+    gap: 10px;
 }
 
 .current-weather__icon {
-    border: 1px solid red;
-    width: 100%;
-    scale: 4;
+    /* border: 1px solid red; */
+    /* width: 100%; */
+    /* scale: 4; */
     /* max-width: 200px; */
+    font-size: 3rem;
     margin: 0px 0 0px 0;
     padding: 0;
 }
@@ -44,6 +52,6 @@ sup {
 .current-weather__text {
     font-size: 1rem;
     font-weight: 500;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     /* display: none; */
 }

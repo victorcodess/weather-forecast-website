@@ -1,3 +1,5 @@
+import "./SearchBar.css";
+
 const SearchBar = () => {
   return (
     <div className="search-bar">
@@ -9,14 +11,11 @@ const SearchBar = () => {
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            viewBox="0 0 384 512"
           >
-            <path fill="none" d="M0 0h24v24H0V0z" />
-            <circle cx="15.5" cy="9.5" r="1.5" />
-            <circle cx="8.5" cy="9.5" r="1.5" />
-            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-5-6c.78 2.34 2.72 4 5 4s4.22-1.66 5-4H7z" />
+            <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z" />
           </svg>
         </label>
       </div>
