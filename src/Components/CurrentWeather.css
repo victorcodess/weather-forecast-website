@@ -1,0 +1,49 @@
+.current {
+    display: flex;
+    gap: 20px;
+    /* justify-content: center; */
+    align-items:  center;
+}
+
+.current-temp {
+    font-size: 6rem;
+    font-weight: 500;
+}
+
+sup {
+    font-size: 2rem;
+}
+
+.location {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.current-date {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
+
+.current-weather__icon {
+    border: 1px solid red;
+    width: 100%;
+    scale: 4;
+    /* max-width: 200px; */
+    margin: 0px 0 0px 0;
+    padding: 0;
+}
+
+.current-weather__text {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 20px;
+    /* display: none; */
+}
