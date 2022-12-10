@@ -3,11 +3,11 @@ import "./SearchBar.css";
 const SearchBar = () => {
   return (
     <div className="search-bar">
-      <div class="omrs-input-group">
-        <label class="omrs-input-underlined">
+      <div className="omrs-input-group">
+        <label className="omrs-input-underlined">
           <input required />
-          <span class="omrs-input-label">Location</span>
-          {/* <span class="omrs-input-helper">Type in your</span> */}
+          <span className="omrs-input-label">Location</span>
+          {/* <span className="omrs-input-helper">Type in your</span> */}
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
