@@ -1,41 +1,86 @@
-#root {
-  max-width: 1280px;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap");
+
+body {
+  background-image: url("images/cloud.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+:root {
+  --omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
+  --omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
+  --omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
+  --omrs-color-interaction: #1e4bd1;
+  --omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
+  --omrs-color-bg-low-contrast: #eff1f2;
+  --omrs-color-ink-high-contrast: #121212;
+  --omrs-color-bg-high-contrast: #ffffff;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/** END: Non Openmrs CSS **/
+div.omrs-input-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+  width: 20.4375rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Input*/
+.omrs-input-underlined > input,
+.omrs-input-filled > input {
+  border: none;
+  border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast);
+  width: 100%;
+  height: 2rem;
+  font-size: 1.0625rem;
+  padding-left: 0.875rem;
+  line-height: 147.6%;
+  padding-top: 0.925rem;
+  padding-bottom: 0.2rem;
 }
 
-.card {
-  padding: 2em;
+.omrs-input-underlined > input:focus,
+.omrs-input-filled > input:focus {
+  outline: none;
 }
 
-.read-the-docs {
-  color: #888;
+.omrs-input-underlined > .omrs-input-label,
+.omrs-input-filled > .omrs-input-label {
+  position: absolute;
+  top: 0.9375rem;
+  left: 0.875rem;
+  line-height: 147.6%;
+  color: var(--omrs-color-ink-medium-contrast);
+  transition: top 0.2s;
+}
+
+.omrs-input-underlined > svg,
+.omrs-input-filled > svg {
+  position: absolute;
+  top: 0.9375rem;
+  right: 0.875rem;
+  fill: var(--omrs-color-ink-medium-contrast);
+}
+
+.omrs-input-underlined > input:hover,
+.omrs-input-filled > input:hover {
+  background: var(--omrs-color-interaction-minus-two);
+  border-color: var(--omrs-color-ink-high-contrast);
+}
+
+.omrs-input-underlined > input:focus + .omrs-input-label,
+.omrs-input-underlined > input:valid + .omrs-input-label,
+.omrs-input-filled > input:focus + .omrs-input-label,
+.omrs-input-filled > input:valid + .omrs-input-label {
+  top: 0;
+  font-size: 0.9375rem;
+  margin-bottom: 32px;
 }
