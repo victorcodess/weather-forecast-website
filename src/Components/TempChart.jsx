@@ -14,6 +14,9 @@ import { Line } from "react-chartjs-2";
 import "./TempChart.css";
 // import faker from 'faker';
 
+// ChartJS.defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
+// ChartJS.defaults.global.legend.display = false;
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -26,37 +29,99 @@ ChartJS.register(
 );
 
 export const options = {
+  color: "#fff",
   responsive: true,
   plugins: {
+    tooltip: {
+      enabled: true,
+      backgroundColor: "rgba(0, 0, 0, 0.8)",
+      titleFont: {
+        family: '"Fira Sans", sans-serif',
+        size: 20,
+      },
+      bodyFont: {
+        family: '"Fira Sans", sans-serif',
+        size: 20,
+      },
+      padding: 20,
+      caretSize: 10,
+      displayColors: false,
+      // titleColor: "#000"
+    },
     legend: {
-      position: "top",
+      display: true,
+      position: "bottom",
+      title: {
+        display: false,
+        text: "Yes",
+        color: "#000",
+      },
+      strokeStyle: "#000",
+      labels: {
+        color: "#fff",
+        font: {
+          family: '"Fira Sans", sans-serif',
+          size: 25,
+        },
+        pointStyle: "line",
+        usePointStyle: true,
+        pointStyleWidth: 1,
+      },
     },
     title: {
-      display: true,
-      text: "Chart.js Line Chart",
+      display: false,
+      text: "Weather Chart",
     },
   },
+  // animations: {
+  //   tension: {
+  //     duration: 1000,
+  //     easing: 'linear',
+  //     from: 1,
+  //     to: 0,
+  //     loop: true
+  //   }
+  // },
 };
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
+const labels = [
+  "00:00",
+  "03:00",
+  "06:00",
+  "09:00",
+  "12:00",
+  "15:00",
+  "18:00",
+  "21:00",
+  "24:00",
+];
 
 export const data = {
   labels,
   datasets: [
     {
       fill: true,
-      label: "Dataset 2",
-      data: [900, 249, 788, 100, 200, 140, 544],
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
+      tension: 0.35,
+      label: "Temperature (°C) ",
+      data: [24.0, 22.5, 20.7, 25.2, 35.7, 37.9, 31.8, 27.0, 24.6],
+      borderColor: "rgba(73, 133, 224, 1)",
+      backgroundColor: "rgba(73, 133, 224, 0.5)",
+      borderWidth: 5,
+      stepped: true,
+      radius: 3,
+      hoverRadius: 10,
+      hitRadius: 50,
+      pointStyle: "circle",
+      color: "#fff"
     },
-    {
-      fill: true,
-      label: "Dataset 2",
-      data: [100, 200, 140, 544, 788, 900, 249],
-      borderColor: "rgb(53, 162, 235)",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
-    },
+    // {
+    //   fill: true,
+    //   tension: 0.35,
+    //   label: "Humidity",
+    //   data: [21.0, 22, 24, 20, 13, 12, 17, 19, 26],
+    //   borderColor: "rgb(53, 162, 235)",
+    //   backgroundColor: "rgba(53, 162, 235, 0.5)",
+    // },
   ],
 };
 

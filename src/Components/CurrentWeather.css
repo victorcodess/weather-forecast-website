@@ -1,11 +1,11 @@
 .current {
     width: 100%;
-    max-width: 750px;
+    max-width: 0px;
     display: flex;
     gap: 20px;
-    /* justify-content: center; */
+    justify-content: center;
     align-items:  center;
-    margin: 0 300px;
+    margin: 0 auto;
     scale: 1.5;
 }
 

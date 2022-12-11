@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <SearchBar />
       <CurrentWeather />
-      {firstRandom}
+      {/* {firstRandom} */}
       {/* <LineChart data={data} /> */}
       <TempChart/>
       {/* {JSON.stringify(weather.current.temp_f)} */}
