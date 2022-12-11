@@ -29,7 +29,33 @@ ChartJS.register(
 );
 
 export const options = {
-  color: "#fff",
+  scales: {
+    y: {
+      suggestedMin: 15,
+      display: false,
+      suggestedMax: 40,
+      color: "#fff",
+    },
+    x: {
+      // display: false,
+      border: {
+        display: false,
+        width: 10,
+      },
+      grid: {
+        display: false,
+        drawBorder: false,
+      },
+      ticks: {
+        color: "#fff",
+        // display: false,
+        font: {
+          family: '"Fira Sans", sans-serif',
+          size: 20,
+        },
+      },
+    },
+  },
   responsive: true,
   plugins: {
     tooltip: {
@@ -46,6 +72,11 @@ export const options = {
       padding: 20,
       caretSize: 10,
       displayColors: false,
+      // callback: {
+      //   label: function (Tooltip) {
+      //     return Tooltip + "ff";
+      //   },
+      // },
       // titleColor: "#000"
     },
     legend: {
@@ -61,7 +92,7 @@ export const options = {
         color: "#fff",
         font: {
           family: '"Fira Sans", sans-serif',
-          size: 25,
+          size: 30,
         },
         pointStyle: "line",
         usePointStyle: true,
@@ -107,12 +138,12 @@ export const data = {
       borderColor: "rgba(73, 133, 224, 1)",
       backgroundColor: "rgba(73, 133, 224, 0.5)",
       borderWidth: 5,
-      stepped: true,
+      // stepped: true,
       radius: 3,
       hoverRadius: 10,
-      hitRadius: 50,
+      hitRadius: 100,
       pointStyle: "circle",
-      color: "#fff"
+      color: "#fff",
     },
     // {
     //   fill: true,
