@@ -1,0 +1,31 @@
+.forecast {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 10px;
+    justify-content: center;
+    align-items:  center;
+    margin: 0;
+    background-color: rgba(0,0,0,0.2);
+    padding: 30px 41px;
+    border-radius: 20px;
+}
+
+.forecast-weather__icon {
+    font-size: 50px;
+}
+
+.forecast-date {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.forecast-data {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.forecast-humidity {
+    font-size: 25px;
+    font-weight: 500;
+}

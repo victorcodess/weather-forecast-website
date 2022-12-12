@@ -3,6 +3,8 @@ import "./App.css";
 import SearchBar from "./Components/SearchBar";
 import CurrentWeather from "./Components/CurrentWeather";
 import TempChart from "./Components/TempChart";
+import Forecast from "./Components/Forecast";
+import Footer from "./Components/Footer";
 
 function App() {
   // const [weather, setWeather] = useState([]);
@@ -24,9 +26,20 @@ function App() {
   return (
     <div className="App">
       <SearchBar />
-      <div className="grid-one">
-        <CurrentWeather />
-        <TempChart />
+      <div className="grid-two">
+        <div className="grid-one">
+          <CurrentWeather />
+          <div className="grid-three">
+            <Forecast />
+            <Forecast />
+            <Forecast />
+            <Forecast />
+          </div>
+        </div>
+        <div className="grid-four">
+          <TempChart />
+          <Footer/>
+        </div>
       </div>
 
       {/* {JSON.stringify(weather.current.temp_f)} */}
