@@ -24,12 +24,14 @@ function App() {
   return (
     <div className="App">
       <SearchBar />
-      <CurrentWeather />
-      {/* <TempChart /> */}
+      <div className="grid-one">
+        <CurrentWeather />
+        <TempChart />
+      </div>
+
       {/* {JSON.stringify(weather.current.temp_f)} */}
     </div>
   );
 }
-   
 
 export default App;

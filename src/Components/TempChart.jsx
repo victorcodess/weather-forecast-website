@@ -43,8 +43,9 @@ export const options = {
         width: 10,
       },
       grid: {
-        display: false,
+        display: true,
         drawBorder: false,
+        color: "rgba(255, 255, 255, 0.1)",
       },
       ticks: {
         color: "#fff",
@@ -52,7 +53,7 @@ export const options = {
         font: {
           family: '"Fira Sans", sans-serif',
           weight: 600,
-          size: 30,
+          size: 15,
         },
       },
     },
@@ -64,11 +65,11 @@ export const options = {
       backgroundColor: "rgba(0, 0, 0, 0.8)",
       titleFont: {
         family: '"Fira Sans", sans-serif',
-        size: 20,
+        size: 15,
       },
       bodyFont: {
         family: '"Fira Sans", sans-serif',
-        size: 20,
+        size: 15,
       },
       padding: 20,
       caretSize: 10,
@@ -91,11 +92,11 @@ export const options = {
       strokeStyle: "#000",
       labels: {
         color: "#fff",
-        padding: 40,
+        padding: 20,
         font: {
           family: '"Fira Sans", sans-serif',
           weight: 600,
-          size: 60,
+          size: 25,
         },
         pointStyle: "line",
         usePointStyle: true,
@@ -160,7 +161,11 @@ export const data = {
 };
 
 const TempChart = () => {
-  return <Line options={options} data={data} className="chart" />;
+  return (
+    <div className="temp-chart">
+      <Line options={options} data={data} />
+    </div>
+  );
 };
 
 export default TempChart;

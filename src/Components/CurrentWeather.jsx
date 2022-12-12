@@ -14,8 +14,6 @@ const CurrentWeather = () => {
         <h3 className="current-date">11:00 - Saturday, 10 December 2022</h3>
       </div>
       <div className="current-weather">
-        {/* <WiDayCloudy className="current-weather__icon" /> */}
-
         <FontAwesomeIcon
           icon="fa-solid fa-cloud-sun"
           className="current-weather__icon"

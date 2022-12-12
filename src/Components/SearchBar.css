@@ -28,14 +28,13 @@ div.omrs-input-group {
   border: none;
   border-bottom: 0.125rem solid rgba(215, 215, 239, 0.4);
   width: 100%;
-  height: 2rem;
   font-size: 1.1625rem;
   font-weight: 500;
   padding-left: 0.875rem;
   line-height: 147.6%;
   padding-top: 0.925rem;
   padding-bottom: 0.2rem;
-  color: #fff
+  color: #fff;
 }
 
 .omrs-input-underlined > input:focus,

@@ -1,4 +1,8 @@
-.chart {
-  margin: -220px;
-  scale: 0.55;
+.temp-chart {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0;
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 100%;
+  width: 620px;
 }

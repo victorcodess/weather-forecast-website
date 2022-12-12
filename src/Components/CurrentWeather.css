@@ -1,57 +1,49 @@
 .current {
-    width: 100%;
-    max-width: 0px;
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items:  center;
-    margin: 0 auto;
-    scale: 1.5;
+    margin: 0;
+    background-color: rgba(0,0,0,0.2);
+    padding: 30px 50px;
+    border-radius: 20px;
 }
 
 .current-temp {
-    font-size: 6rem;
+    font-size: 10rem;
     font-weight: 500;
 }
 
 sup {
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 .location {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 500;
 }
 
 .current-date {
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 2rem;
+    width: 260.1px;
 }
 
 .current-weather {
-    /* width: 50%;
-    max-width: 1000px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* margin: auto 0; */
     gap: 10px;
 }
 
 .current-weather__icon {
-    /* border: 1px solid red; */
-    /* width: 100%; */
-    /* scale: 4; */
-    /* max-width: 200px; */
-    font-size: 3rem;
+    font-size: 5rem;
     margin: 0px 0 0px 0;
     padding: 0;
 }
 
 .current-weather__text {
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 500;
-    /* margin-top: 20px; */
-    /* display: none; */
 }
