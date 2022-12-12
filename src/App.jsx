@@ -3,8 +3,6 @@ import "./App.css";
 import SearchBar from "./Components/SearchBar";
 import CurrentWeather from "./Components/CurrentWeather";
 import TempChart from "./Components/TempChart";
-import { faker } from "@faker-js/faker";
-// import LineChart from "./Components/TempChart";
 
 function App() {
   // const [weather, setWeather] = useState([]);
@@ -23,25 +21,15 @@ function App() {
   //     });
   // }, []);
 
-  // console.log(weather);
-  const firstRandom = faker.datatype.number({ min: 0, max: 1000 });
-
-  const data = [
-    { label: 'January', value: 100 },
-    { label: 'February', value: 120 },
-    // ...
-  ];
-
   return (
     <div className="App">
       <SearchBar />
       <CurrentWeather />
-      {/* {firstRandom} */}
-      {/* <LineChart data={data} /> */}
-      <TempChart/>
+      {/* <TempChart /> */}
       {/* {JSON.stringify(weather.current.temp_f)} */}
     </div>
   );
 }
+   
 
 export default App;

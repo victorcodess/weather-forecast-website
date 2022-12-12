@@ -1,13 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&display=swap");
 
+body::after {
+  background-color: rgba(0, 0, 0, 1);
+}
+
 body {
-  background-image: url("images/cloud.jpg");
+  background-image: url("images/cloud.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-blend-mode: overlay;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
   font-family: "Fira Sans", sans-serif;
-
 }
 
 * {

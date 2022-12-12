@@ -51,7 +51,8 @@ export const options = {
         // display: false,
         font: {
           family: '"Fira Sans", sans-serif',
-          size: 20,
+          weight: 600,
+          size: 30,
         },
       },
     },
@@ -90,9 +91,11 @@ export const options = {
       strokeStyle: "#000",
       labels: {
         color: "#fff",
+        padding: 40,
         font: {
           family: '"Fira Sans", sans-serif',
-          size: 30,
+          weight: 600,
+          size: 60,
         },
         pointStyle: "line",
         usePointStyle: true,
