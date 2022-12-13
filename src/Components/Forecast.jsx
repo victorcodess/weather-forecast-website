@@ -1,16 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Forecast.css"
+import "./Forecast.css";
 
-const Forecast = () => {
+const Forecast = ({ date, icon, value }) => {
   return (
     <div className="forecast">
-      <h2 className="forecast-date">Nov 24</h2>
+      <h2 className="forecast-date">{date}</h2>
       <FontAwesomeIcon
-        icon="fa-solid fa-cloud"
+        icon={`fa-solid ${icon}`}
         className="forecast-weather__icon"
       />
       <h3 className="forecast-data">Humidity</h3>
-      <h2 className="forecast-humidity">30%</h2>
+      <h2 className="forecast-humidity">{value}</h2>
     </div>
   );
 };

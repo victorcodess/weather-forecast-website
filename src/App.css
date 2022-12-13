@@ -15,6 +15,10 @@ html {
   /* box-sizing: border-box; */
 }
 
+.App {
+  margin-bottom: 100px;
+}
+
 .grid-one {
   display: flex;
   flex-direction: column;

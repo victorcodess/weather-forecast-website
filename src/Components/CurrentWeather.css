@@ -5,28 +5,29 @@
     align-items:  center;
     margin: 0;
     background-color: rgba(0,0,0,0.2);
-    padding: 30px 50px;
+    padding: 20px 0px;
     border-radius: 20px;
+    width: 720px;
 }
 
 .current-temp {
-    font-size: 10rem;
+    font-size: 8.5rem;
     font-weight: 500;
 }
 
 sup {
-    font-size: 4rem;
+    font-size: 3.5rem;
 }
 
 .location {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 500;
 }
 
 .current-date {
     font-weight: 400;
-    font-size: 2rem;
-    width: 260.1px;
+    font-size: 1.5rem;
+    width: 200px;
 }
 
 .current-weather {
@@ -38,12 +39,12 @@ sup {
 }
 
 .current-weather__icon {
-    font-size: 5rem;
+    font-size: 4rem;
     margin: 0px 0 0px 0;
     padding: 0;
 }
 
 .current-weather__text {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
