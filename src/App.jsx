@@ -11,7 +11,7 @@ function App() {
   weather?.forecast?.forecastday.map((day) => day.day.condition.text);
   useEffect(() => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=04c60fe1f2624fff885223022220912&q=Chicago&days=3&aqi=no&alerts=no`
+      `http://api.weatherapi.com/v1/forecast.json?key=04c60fe1f2624fff885223022220912&q=Ikeja&days=3&aqi=no&alerts=no`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -33,9 +33,19 @@ function App() {
 
   const forecastDays = weather?.forecast?.forecastday;
 
-  //const todayTemp = weather?.forecast?.forecastday[0]?.hour?.map(hour => { hour.temp_c })
+  // const todayTemp = weather?.forecast?.forecastday[0].hour?.map(hour => { hour.temp_c })
 
-  //const nineTemp = todayTemp.filter((temp) => { temp.findIndex() % 3 === 0 }).push(todayTemp[todayTemp.length - 1])
+  const temps = [];
+  weather?.forecast?.forecastday[0].hour.map((hour) => {
+    temps.push(hour.temp_c);
+  });
+  // console.log(temps);
+
+  const eightTemps = temps.filter((_, i) => i % 3 === 0);
+  // console.log(eightTemps);
+
+  const nineTemps = [...eightTemps, temps[temps.length - 1]];
+  // console.log(nineTemps);
 
   // console.log(
   //   weather?.forecast?.forecastday.map((day) => day.day.condition.text)
@@ -75,7 +85,7 @@ function App() {
       <SearchBar />
       <div className="grid-two">
         <div className="grid-one">
-          <CurrentWeather weatherData={currentData} />
+          <CurrentWeather weatherData={currentData} tempsData={nineTemps}/>
           <div className="grid-three">
             {forecastDays?.map((day) => {
               return (
@@ -90,7 +100,7 @@ function App() {
           </div>
         </div>
         <div className="grid-four">
-          <TempChart />
+          <TempChart tempsData={nineTemps}/>
           <Footer />
         </div>
       </div>

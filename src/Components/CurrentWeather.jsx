@@ -34,7 +34,7 @@ const findIcon = (condition) => {
   return icon;
 };
 
-const CurrentWeather = ({ weatherData }) => {
+const CurrentWeather = ({ weatherData, tempsData }) => {
   // console.log(weatherData);
 
   const condition = weatherData?.text;

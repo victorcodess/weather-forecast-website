@@ -160,10 +160,39 @@ export const data = {
   ],
 };
 
-const TempChart = () => {
+const TempChart = (tempsData) => {
+  // console.log(tempsData.tempsData);
+  // console.log(data);
+  const newArray = tempsData.tempsData;
+  console.log(newArray);
+
+  const newData = {
+    labels,
+    datasets: [
+      {
+        fill: true,
+        tension: 0.35,
+        label: "Temperature (°C) ",
+        data: newArray,
+        borderColor: "rgba(73, 133, 224, 1)",
+        backgroundColor: "rgba(73, 133, 224, 0.5)",
+        borderWidth: 5,
+        // stepped: true,
+        radius: 3,
+        hoverRadius: 10,
+        hitRadius: 100,
+        pointStyle: "circle",
+        color: "#fff",
+      },
+    ],
+  };
+
+  // console.log(newData);
+  // console.log(data);
+
   return (
     <div className="temp-chart">
-      <Line options={options} data={data} />
+      <Line options={options} data={newData} />
     </div>
   );
 };
