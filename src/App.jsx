@@ -11,7 +11,7 @@ function App() {
   weather?.forecast?.forecastday.map((day) => day.day.condition.text);
   useEffect(() => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=04c60fe1f2624fff885223022220912&q=Egbeda&days=5&aqi=no&alerts=yes`
+      `http://api.weatherapi.com/v1/forecast.json?key=04c60fe1f2624fff885223022220912&q=Chicago&days=3&aqi=no&alerts=no`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -33,16 +33,20 @@ function App() {
 
   const forecastDays = weather?.forecast?.forecastday;
 
-  console.log(
-    weather?.forecast?.forecastday.map((day) => day.day.condition.text)
-  );
+  //const todayTemp = weather?.forecast?.forecastday[0]?.hour?.map(hour => { hour.temp_c })
 
-  console.log(forecastDays);
+  //const nineTemp = todayTemp.filter((temp) => { temp.findIndex() % 3 === 0 }).push(todayTemp[todayTemp.length - 1])
+
+  // console.log(
+  //   weather?.forecast?.forecastday.map((day) => day.day.condition.text)
+  // );
+
+  // console.log(forecastDays);
 
   // console.log(forecastData);
 
   const dateToWords = (date) => {
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    // const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const months = [
       "Jan",
       "Feb",
@@ -64,9 +68,7 @@ function App() {
     const dateNum = date.getDate();
 
     return `${month} ${dateNum}`;
-  }
-
-  console.log(dateToWords("2022-12-13"))
+  };
 
   return (
     <div className="App">
@@ -78,8 +80,9 @@ function App() {
             {forecastDays?.map((day) => {
               return (
                 <Forecast
+                  key={day.date}
                   date={dateToWords(day.date)}
-                  icon={findIcon(day.text)}
+                  icon={findIcon(day.day?.condition?.text)}
                   value={day.day?.avghumidity}
                 />
               );

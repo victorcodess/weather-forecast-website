@@ -28,12 +28,6 @@ const findIcon = (condition) => {
     case "Fog":
       icon = "fa-cloud-sun";
       break;
-    // case condition?.includes("rain"):
-    //   icon = "fa-cloud-rain";
-    //   break;
-    // case condition?.includes("snow"):
-    //   icon = "fa-snowflake";
-    //   break;
     default:
       icon = "fa-sun";
   }

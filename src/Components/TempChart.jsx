@@ -100,7 +100,7 @@ export const options = {
         },
         pointStyle: "line",
         usePointStyle: true,
-        pointStyleWidth: 1,
+        pointStyleWidth: 0.001,
       },
     },
     title: {

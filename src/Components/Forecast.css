@@ -1,23 +1,24 @@
 .forecast {
     display: flex;
     flex-direction: column;
-    width: fit-content;
-    gap: 10px;
+    width: 226.67px;
+    gap: 20px;
     justify-content: center;
     align-items:  center;
     margin: 0;
     background-color: rgba(0,0,0,0.2);
-    padding: 30px 41px;
+    padding: 39.3px 0px;
     border-radius: 20px;
 }
 
 .forecast-weather__icon {
-    font-size: 3.125em;
+    font-size: 4em;
 }
 
 .forecast-date {
     font-size: 20px;
     font-weight: 500;
+    /* margin-bottom: 15px; */
 }
 
 .forecast-data {
@@ -28,4 +29,16 @@
 .forecast-humidity {
     font-size: 25px;
     font-weight: 500;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
