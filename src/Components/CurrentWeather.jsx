@@ -1,50 +1,49 @@
 import "./CurrentWeather.css";
-import { WiDayCloudy } from "react-icons/wi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+const findIcon = (condition) => {
+  let icon;
+  switch (condition) {
+    case "Clear":
+      icon = "fa-cloud";
+      break;
+    case "Sunny":
+      icon = "fa-sun";
+      break;
+    case "Mist":
+      icon = "fa-cloud-meatball";
+      break;
+    case "Cloudy":
+      icon = "fa-cloud";
+      break;
+    case "Partly cloudy":
+      icon = "fa-cloud-sun";
+      break;
+    case "Overcast":
+      icon = "fa-smog";
+      break;
+    case "Blizzard":
+      icon = "fa-cloud-sun";
+      break;
+    case "Fog":
+      icon = "fa-cloud-sun";
+      break;
+    // case condition?.includes("rain"):
+    //   icon = "fa-cloud-rain";
+    //   break;
+    // case condition?.includes("snow"):
+    //   icon = "fa-snowflake";
+    //   break;
+    default:
+      icon = "fa-sun";
+  }
+  return icon;
+};
+
 const CurrentWeather = ({ weatherData }) => {
-  console.log(weatherData);
+  // console.log(weatherData);
 
   const condition = weatherData?.text;
-
-  const findIcon = (condition) => {
-    let icon;
-    switch (condition) {
-      case "Clear":
-        icon = "fa-cloud";
-        break;
-      case "Sunny":
-        icon = "fa-sun";
-        break;
-      case "Mist":
-        icon = "fa-cloud-meatball";
-        break;
-      case "Cloudy":
-        icon = "fa-cloud";
-        break;
-      case "Partly cloudy":
-        icon = "fa-cloud-sun";
-        break;
-      case "Overcast":
-        icon = "fa-smog";
-        break;
-      case "Blizzard":
-        icon = "fa-cloud-sun";
-        break;
-      case "Fog":
-        icon = "fa-cloud-sun";
-        break;
-      case condition?.includes("rain"):
-        icon = "fa-cloud-rain";
-        break;
-      case condition?.includes("snow"):
-        icon = "fa-snowflake";
-        break;
-      default:
-        icon = "fa-cloud";
-    }
-    return icon;
-  };
 
   const time = new Date().toLocaleTimeString("en-us", {
     hour: "numeric",
@@ -84,4 +83,4 @@ const CurrentWeather = ({ weatherData }) => {
   );
 };
 
-export default CurrentWeather;
+export { CurrentWeather, findIcon };

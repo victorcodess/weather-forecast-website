@@ -10,7 +10,7 @@ const Forecast = ({ date, icon, value }) => {
         className="forecast-weather__icon"
       />
       <h3 className="forecast-data">Humidity</h3>
-      <h2 className="forecast-humidity">{value}</h2>
+      <h2 className="forecast-humidity">{value}%</h2>
     </div>
   );
 };
