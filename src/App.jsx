@@ -14,7 +14,6 @@ function App() {
 
   // import the API key from .env file
   const apiKey = import.meta.env.VITE_API_KEY;
-  console.log(apiKey);
 
   // Get user's location using the Geolocation API
   useEffect(() => {
@@ -30,7 +29,7 @@ function App() {
   // Fetch weather data from the weather API using latitude and longitude
   useEffect(() => {
     fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=${"04c60fe1f2624fff885223022220912"}&q=${lat}, ${lon}&days=3&aqi=no&alerts=yes`
+      `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat}, ${lon}&days=3&aqi=no&alerts=yes`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -44,7 +43,7 @@ function App() {
   // Fetch weather data from the weather API using location from the search bar
   useEffect(() => {
     fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=${"04c60fe1f2624fff885223022220912"}&q=${location}&days=3&aqi=no&alerts=yes`
+      `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3&aqi=no&alerts=yes`
     )
       .then((response) => response.json())
       .then((data) => {
