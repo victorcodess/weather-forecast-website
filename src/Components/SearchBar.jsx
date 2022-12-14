@@ -1,16 +1,15 @@
 import { useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = (props) => {
+const SearchBar = ({ setLoc, toggle }) => {
   const [location, setLocation] = useState("");
 
-// Set the location state to the value of the input field
+  // Set the location state to the value of the input field
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.setLocation(location);
-    form.current.reset();
+    console.log(typeof setLoc);
+    setLoc(location);
   };
-
 
   return (
     <div className="search-bar">
@@ -23,6 +22,11 @@ const SearchBar = (props) => {
               value={location}
               required
               onChange={(e) => setLocation(e.target.value)}
+              style={{
+                background: toggle
+                  ? "rgba(73, 133, 224, 0.3)"
+                  : "rgba(17, 51, 101, 0.425)",
+              }}
             />
             <span className="omrs-input-label">Location</span>
 

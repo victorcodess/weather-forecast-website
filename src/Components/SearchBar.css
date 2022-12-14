@@ -1,7 +1,8 @@
 .search-bar {
   display: flex;
   justify-content: center;
-  margin: 50px auto;
+  margin-right: 110px;
+  width: fit-content;
 }
 
 :root {
@@ -10,6 +11,7 @@
   --omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
   --omrs-color-interaction: #1e4bd1;
   --omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.3);
+  /* --omrs-color-interaction-minus-two: rgba(17, 51, 101, 0.425); */
   --omrs-color-bg-low-contrast: #eff1f2;
   --omrs-color-ink-high-contrast: #121212;
   --omrs-color-bg-high-contrast: #ffffff;
@@ -19,6 +21,17 @@ div.omrs-input-group {
   margin-bottom: 1.5rem;
   position: relative;
   width: 20.4375rem;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #1b1b1b inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+input:autofill {
+  background: var(--omrs-color-interaction-minus-two) !important;
 }
 
 /* Input*/
@@ -73,4 +86,25 @@ div.omrs-input-group {
   top: 0;
   font-size: 0.9375rem;
   margin-bottom: 35px;
+}
+
+@media only screen and (max-width: 1460px) {
+  .search-bar {
+    margin-right: 55px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .search-bar {
+    margin-right: 11px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  div.omrs-input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+    width: 12.4375rem;
+    margin-left: 12px;
+  }
 }

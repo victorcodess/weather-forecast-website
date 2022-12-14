@@ -1,44 +1,111 @@
 .forecast {
-    display: flex;
-    flex-direction: column;
-    width: 226.67px;
-    gap: 20px;
-    justify-content: center;
-    align-items:  center;
-    margin: 0;
-    background-color: rgba(0,0,0,0.2);
-    padding: 39.3px 0px;
-    border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 226.67px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 39.3px 0px;
+  border-radius: 20px;
 }
 
 .forecast-weather__icon {
-    font-size: 4em;
+  font-size: 4em;
 }
 
 .forecast-date {
-    font-size: 20px;
-    font-weight: 500;
-    /* margin-bottom: 15px; */
+  font-size: 20px;
+  font-weight: 500;
+  /* margin-bottom: 15px; */
 }
 
 .forecast-data {
-    font-size: 20px;
-    font-weight: 400;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .forecast-humidity {
-    font-size: 25px;
-    font-weight: 500;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .row {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .data {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+@media only screen and (max-width: 720px) {
+  .forecast {
+    padding: 35px 0;
+    width: 173.33px;
     gap: 10px;
+  }
+
+  .forecast-weather__icon {
+    font-size: 3em;
+  }
+
+  .forecast-date {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .forecast-data {
+    font-size: 17.25px;
+  }
+
+  .forecast-humidity {
+    font-size: 20px;
+  }
+
+  .row {
+    gap: 10px;
+  }
+
+  .data {
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .forecast {
+    padding: 35px 0;
+    width: 93.33px;
+    gap: 10px;
+  }
+
+  .forecast-weather__icon {
+    font-size: 2.5em;
+  }
+
+  .forecast-date {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .forecast-data {
+    font-size: 1rem;
+  }
+
+  .forecast-humidity {
+    font-size: 20px;
+  }
+
+  .row {
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .data {
+    gap: 10px;
+  }
 }

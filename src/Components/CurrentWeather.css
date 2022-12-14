@@ -1,50 +1,116 @@
 .current {
-    display: flex;
-    gap: 35px;
-    justify-content: center;
-    align-items:  center;
-    margin: 0;
-    background-color: rgba(0,0,0,0.2);
-    padding: 20px 0px;
-    border-radius: 20px;
-    width: 720px;
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px 0px;
+  border-radius: 20px;
+  width: 720px;
 }
 
 .current-temp {
-    font-size: 8.5rem;
-    font-weight: 500;
+  font-size: 8.5rem;
+  font-weight: 500;
 }
 
 sup {
-    font-size: 3.5rem;
+  font-size: 3.5rem;
 }
 
 .location {
-    font-size: 3.5rem;
-    font-weight: 500;
+  font-size: 4rem;
+  font-weight: 500;
 }
 
 .current-date {
-    font-weight: 400;
-    font-size: 1.5rem;
-    width: 203px;
+  font-weight: 400;
+  font-size: 1.5rem;
+  width: 219px;
 }
 
 .current-weather {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .current-weather__icon {
-    font-size: 4rem;
-    margin: 0px 0 0px 0;
-    padding: 0;
+  font-size: 4rem;
+  margin: 0px 0 0px 0;
+  padding: 0;
 }
 
 .current-weather__text {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 720px) {
+  .current {
+    gap: 30px;
+    padding: 20px 0px;
+    width: 560px;
+  }
+
+  .current-temp {
+    font-size: 5.5rem;
+  }
+
+  sup {
+    font-size: 2.5rem;
+  }
+
+  .location {
+    font-size: 2.5rem;
+  }
+
+  .current-date {
+    font-size: 1.09rem;
+    width: 150px;
+  }
+
+  .current-weather__icon {
+    font-size: 3rem;
+  }
+
+  .current-weather__text {
     font-size: 1.5rem;
-    font-weight: 500;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .current {
+    gap: 20px;
+    padding: 20px 0px;
+    width: 320px;
+  }
+
+  .current-temp {
+    font-size: 3.5rem;
+  }
+
+  sup {
+    font-size: 1.5rem;
+  }
+
+  .location {
+    font-size: 1.5rem;
+  }
+
+  .current-date {
+    font-size: 0.8rem;
+    width: 60px;
+  }
+
+  .current-weather__icon {
+    font-size: 2rem;
+  }
+
+  .current-weather__text {
+    font-size: 0.8rem;
+  }
 }

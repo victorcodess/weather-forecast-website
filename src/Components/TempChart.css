@@ -1,8 +1,27 @@
 .temp-chart {
   background-color: rgba(0, 0, 0, 0.2);
-  margin: 0;
+  margin: 0 auto;
   padding: 50px;
   border-radius: 20px;
   max-width: 100%;
   width: 620px;
+}
+
+@media only screen and (max-width: 720px) {
+  .temp-chart {
+    margin: 0;
+    padding: 40px 30px;
+    max-width: 100%;
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .temp-chart {
+    /* margin-top: -60px; */
+    padding: 40px 30px;
+    max-width: 100%;
+    width: 260px;
+    /* scale: 0.57; */
+  }
 }

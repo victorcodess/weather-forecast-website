@@ -5,12 +5,35 @@ import { CurrentWeather, findIcon } from "./Components/CurrentWeather";
 import TempChart from "./Components/TempChart";
 import Forecast from "./Components/Forecast";
 import Footer from "./Components/Footer";
+import ExtraData from "./Components/ExtraData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function App() {
   const [weather, setWeather] = useState({});
   const [location, setLocation] = useState("");
   const [lat, setLat] = useState("");
   const [lon, setLon] = useState("");
+  const [toggle, setToggle] = useState(true);
+  // const [bgImg, setBgImg] = useState("");
+
+  // Change the background image when the toggle state changes
+  useEffect(() => {
+    toggle
+      ? (document.body.style =
+          "background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(src/images/cloud.jpg);")
+      : (document.body.style =
+          "background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(src/images/night.jpg);");
+  }, [toggle]);
+
+  // Check if time is day or night
+  useEffect(() => {
+    const time = new Date().getHours();
+    if (time >= 6 && time < 18) {
+      setToggle(true);
+    } else {
+      setToggle(false);
+    }
+  }, []);
 
   // import the API key from .env file
   const apiKey = import.meta.env.VITE_API_KEY;
@@ -63,6 +86,12 @@ function App() {
     text: weather?.current?.condition?.text,
   };
 
+  // Store the extra weather data in an object
+  const extraData = {
+    pressure: weather?.current?.pressure_mb,
+    wind: weather?.current?.wind_mph,
+  };
+
   // Store the forecast data in an array
   const forecastDays = weather?.forecast?.forecastday;
 
@@ -104,10 +133,34 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar location={location} setLocation={setLocation} />
+      <nav className="nav">
+        <div className="logo">
+          <FontAwesomeIcon
+            icon="fa-brands fa-skyatlas"
+            className="logo__icon"
+          />
+          <h1 className="logo__text">skyWatch</h1>
+        </div>
+        <SearchBar setLoc={setLocation} toggle={toggle} />
+        <FontAwesomeIcon
+          icon="fa-solid fa-circle-half-stroke"
+          className="switch-mode"
+          onClick={() => {
+            // Toggle between two background images
+            console.log("clicked");
+            setToggle(!toggle);
+            console.log(toggle);
+          }}
+          style={{
+            // color: toggle ? "white" : "black",
+            transform: toggle ? "scaleX(1)" : "scaleX(-1)",
+            // filter: toggle ? "invert(0)" : "invert(1)",
+          }}
+        />
+      </nav>
       <div className="grid-two">
         <div className="grid-one">
-          <CurrentWeather weatherData={currentData} tempsData={nineTemps} />
+          <CurrentWeather weatherData={currentData} />
           <div className="grid-three">
             {forecastDays?.map((day) => {
               return (
@@ -119,6 +172,9 @@ function App() {
                 />
               );
             })}
+          </div>
+          <div className="grid-three">
+            <ExtraData extraData={extraData} />
           </div>
         </div>
         <div className="grid-four">
