@@ -30,7 +30,7 @@ function App() {
   // Fetch weather data from the weather API using latitude and longitude
   useEffect(() => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${"04c60fe1f2624fff885223022220912"}&q=${lat}, ${lon}&days=3&aqi=no&alerts=yes`
+      `https://api.weatherapi.com/v1/forecast.json?key=${"04c60fe1f2624fff885223022220912"}&q=${lat}, ${lon}&days=3&aqi=no&alerts=yes`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -44,7 +44,7 @@ function App() {
   // Fetch weather data from the weather API using location from the search bar
   useEffect(() => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${"04c60fe1f2624fff885223022220912"}&q=${location}&days=3&aqi=no&alerts=yes`
+      `https://api.weatherapi.com/v1/forecast.json?key=${"04c60fe1f2624fff885223022220912"}&q=${location}&days=3&aqi=no&alerts=yes`
     )
       .then((response) => response.json())
       .then((data) => {
