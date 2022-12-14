@@ -1,6 +1,7 @@
 import "./CurrentWeather.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// Function to find the correct icon for the current weather condition
 const findIcon = (condition) => {
   let icon;
   switch (condition) {
@@ -28,17 +29,27 @@ const findIcon = (condition) => {
     case "Fog":
       icon = "fa-cloud-sun";
       break;
+    case "Light rain":
+      icon = "fa-cloud-rain";
+      break;
+    case "Medium rain":
+      icon = "fa-cloud-rain";
+      break;
+    case "Heavy rain":
+      icon = "fa-cloud-showers-heavy";
+      break;
     default:
       icon = "fa-sun";
   }
   return icon;
 };
 
-const CurrentWeather = ({ weatherData, tempsData }) => {
-  // console.log(weatherData);
+
+const CurrentWeather = ({ weatherData }) => {
 
   const condition = weatherData?.text;
 
+  // Format the time and date
   const time = new Date().toLocaleTimeString("en-us", {
     hour: "numeric",
     minute: "numeric",
@@ -52,7 +63,6 @@ const CurrentWeather = ({ weatherData, tempsData }) => {
     day: "numeric",
   });
 
-  // console.log((weatherData?.date).split(" ")[1]);
 
   return (
     <div className="current">

@@ -8,21 +8,54 @@ import Footer from "./Components/Footer";
 
 function App() {
   const [weather, setWeather] = useState({});
-  weather?.forecast?.forecastday.map((day) => day.day.condition.text);
+  const [location, setLocation] = useState("");
+  const [lat, setLat] = useState("");
+  const [lon, setLon] = useState("");
+
+  // import the API key from .env file
+  const apiKey = import.meta.env.VITE_API_KEY;
+  console.log(apiKey);
+
+  // Get user's location using the Geolocation API
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setLat(position.coords.latitude);
+        setLon(position.coords.longitude);
+      },
+      (err) => console.log(err)
+    );
+  }, []);
+
+  // Fetch weather data from the weather API using latitude and longitude
   useEffect(() => {
     fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=04c60fe1f2624fff885223022220912&q=Ikeja&days=3&aqi=no&alerts=no`
+      `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat}, ${lon}&days=3&aqi=no&alerts=yes`
     )
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
         setWeather(data);
       })
       .catch((err) => {
-        // console.log(err.message);
+        console.log(err.message);
       });
-  }, []);
+  }, [lat]);
 
+  // Fetch weather data from the weather API using location from the search bar
+  useEffect(() => {
+    fetch(
+      `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=3&aqi=no&alerts=yes`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setWeather(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [location]);
+
+  // Store the current weather data in an object
   const currentData = {
     temp: weather?.current?.temp_c,
     location: weather?.location?.name,
@@ -31,32 +64,23 @@ function App() {
     text: weather?.current?.condition?.text,
   };
 
+  // Store the forecast data in an array
   const forecastDays = weather?.forecast?.forecastday;
 
-  // const todayTemp = weather?.forecast?.forecastday[0].hour?.map(hour => { hour.temp_c })
-
+  // Store the hourly temperature data in an array
   const temps = [];
   weather?.forecast?.forecastday[0].hour.map((hour) => {
     temps.push(hour.temp_c);
   });
-  // console.log(temps);
 
+  // Filter the hourly temperature data to get the temperature every 3 hours
   const eightTemps = temps.filter((_, i) => i % 3 === 0);
-  // console.log(eightTemps);
 
+  // Add the last temperature to the array
   const nineTemps = [...eightTemps, temps[temps.length - 1]];
-  // console.log(nineTemps);
 
-  // console.log(
-  //   weather?.forecast?.forecastday.map((day) => day.day.condition.text)
-  // );
-
-  // console.log(forecastDays);
-
-  // console.log(forecastData);
-
+  // Convert the date to words
   const dateToWords = (date) => {
-    // const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const months = [
       "Jan",
       "Feb",
@@ -73,7 +97,6 @@ function App() {
     ];
 
     date = new Date(date);
-    // const day = days[date.getDay()];
     const month = months[date.getMonth()];
     const dateNum = date.getDate();
 
@@ -82,10 +105,10 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar />
+      <SearchBar location={location} setLocation={setLocation} />
       <div className="grid-two">
         <div className="grid-one">
-          <CurrentWeather weatherData={currentData} tempsData={nineTemps}/>
+          <CurrentWeather weatherData={currentData} tempsData={nineTemps} />
           <div className="grid-three">
             {forecastDays?.map((day) => {
               return (
@@ -100,12 +123,10 @@ function App() {
           </div>
         </div>
         <div className="grid-four">
-          <TempChart tempsData={nineTemps}/>
+          <TempChart tempsData={nineTemps} />
           <Footer />
         </div>
       </div>
-
-      {/* {JSON.stringify(weather.current.temp_c)} */}
     </div>
   );
 }

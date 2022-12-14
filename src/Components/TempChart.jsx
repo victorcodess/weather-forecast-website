@@ -1,4 +1,3 @@
-// import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,11 +11,8 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import "./TempChart.css";
-// import faker from 'faker';
 
-// ChartJS.defaults.global.defaultFontFamily = "'PT Sans', sans-serif"
-// ChartJS.defaults.global.legend.display = false;
-
+// Register the chart.js plugins
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -28,12 +24,13 @@ ChartJS.register(
   Legend
 );
 
+// Chart.js options
 export const options = {
   scales: {
     y: {
-      suggestedMin: 15,
+      // suggestedMin: 0,
       display: false,
-      suggestedMax: 40,
+      // suggestedMax: 40,
       color: "#fff",
     },
     x: {
@@ -44,7 +41,6 @@ export const options = {
       },
       grid: {
         display: true,
-        drawBorder: false,
         color: "rgba(255, 255, 255, 0.1)",
       },
       ticks: {
@@ -74,12 +70,6 @@ export const options = {
       padding: 20,
       caretSize: 10,
       displayColors: false,
-      // callback: {
-      //   label: function (Tooltip) {
-      //     return Tooltip + "ff";
-      //   },
-      // },
-      // titleColor: "#000"
     },
     legend: {
       display: true,
@@ -108,15 +98,6 @@ export const options = {
       text: "Weather Chart",
     },
   },
-  // animations: {
-  //   tension: {
-  //     duration: 1000,
-  //     easing: 'linear',
-  //     from: 1,
-  //     to: 0,
-  //     loop: true
-  //   }
-  // },
 };
 
 const labels = [
@@ -164,7 +145,7 @@ const TempChart = (tempsData) => {
   // console.log(tempsData.tempsData);
   // console.log(data);
   const newArray = tempsData.tempsData;
-  console.log(newArray);
+  // console.log(newArray);
 
   const newData = {
     labels,
