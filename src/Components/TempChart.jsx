@@ -100,6 +100,7 @@ export const options = {
   },
 };
 
+// Chart.js labels
 const labels = [
   "00:00",
   "03:00",
@@ -112,40 +113,8 @@ const labels = [
   "24:00",
 ];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      fill: true,
-      tension: 0.35,
-      label: "Temperature (°C) ",
-      data: [24.0, 22.5, 20.7, 25.2, 35.7, 37.9, 31.8, 27.0, 24.6],
-      borderColor: "rgba(73, 133, 224, 1)",
-      backgroundColor: "rgba(73, 133, 224, 0.5)",
-      borderWidth: 5,
-      // stepped: true,
-      radius: 3,
-      hoverRadius: 10,
-      hitRadius: 100,
-      pointStyle: "circle",
-      color: "#fff",
-    },
-    // {
-    //   fill: true,
-    //   tension: 0.35,
-    //   label: "Humidity",
-    //   data: [21.0, 22, 24, 20, 13, 12, 17, 19, 26],
-    //   borderColor: "rgb(53, 162, 235)",
-    //   backgroundColor: "rgba(53, 162, 235, 0.5)",
-    // },
-  ],
-};
-
 const TempChart = (tempsData) => {
-  // console.log(tempsData.tempsData);
-  // console.log(data);
   const newArray = tempsData.tempsData;
-  // console.log(newArray);
 
   const newData = {
     labels,
@@ -167,9 +136,6 @@ const TempChart = (tempsData) => {
       },
     ],
   };
-
-  // console.log(newData);
-  // console.log(data);
 
   return (
     <div className="temp-chart">

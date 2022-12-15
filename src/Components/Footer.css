@@ -16,6 +16,16 @@
   padding: 1.4em;
 }
 
+a {
+  text-decoration: none;
+  color: rgba(73, 133, 224, 1);
+  transition: all 200ms ease-in-out 5ms;
+}
+
+a:hover {
+  color: #fff;
+}
+
 @media only screen and (max-width: 720px) {
   .footer {
     width: 560px;

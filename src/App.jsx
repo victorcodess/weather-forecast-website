@@ -16,7 +16,6 @@ function App() {
   const [lat, setLat] = useState("");
   const [lon, setLon] = useState("");
   const [toggle, setToggle] = useState(true);
-  // const [bgImg, setBgImg] = useState("");
 
   // Change the background image when the toggle state changes
   useEffect(() => {
@@ -146,15 +145,10 @@ function App() {
           icon="fa-solid fa-circle-half-stroke"
           className="switch-mode"
           onClick={() => {
-            // Toggle between two background images
-            console.log("clicked");
             setToggle(!toggle);
-            console.log(toggle);
           }}
           style={{
-            // color: toggle ? "white" : "black",
             transform: toggle ? "scaleX(1)" : "scaleX(-1)",
-            // filter: toggle ? "invert(0)" : "invert(1)",
           }}
         />
       </nav>
@@ -182,6 +176,7 @@ function App() {
           <Footer />
         </div>
       </div>
+      {/* <pre>{JSON.stringify(weather, null, 2)}</pre> */}
     </div>
   );
 }

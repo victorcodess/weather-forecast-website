@@ -7,7 +7,6 @@ const SearchBar = ({ setLoc, toggle }) => {
   // Set the location state to the value of the input field
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(typeof setLoc);
     setLoc(location);
   };
 
