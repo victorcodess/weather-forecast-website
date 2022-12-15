@@ -20,9 +20,9 @@ function App() {
   useEffect(() => {
     toggle
       ? (document.body.style =
-          "background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(src/images/cloud.jpg);")
+          "background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(./images/cloud.jpg);")
       : (document.body.style =
-          "background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(src/images/night.jpg);");
+          "background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(./images/night.jpg);");
   }, [toggle]);
 
   // Check if time is day or night
