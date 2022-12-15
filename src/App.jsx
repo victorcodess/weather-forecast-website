@@ -7,6 +7,8 @@ import Forecast from "./Components/Forecast";
 import Footer from "./Components/Footer";
 import ExtraData from "./Components/ExtraData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import cloudImg from "./assets/cloud.jpg";
+import nightImg from "./assets/night.jpg";
 
 function App() {
   const [weather, setWeather] = useState({});
@@ -19,10 +21,8 @@ function App() {
   // Change the background image when the toggle state changes
   useEffect(() => {
     toggle
-      ? (document.body.style =
-          "background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(./images/cloud.jpg);")
-      : (document.body.style =
-          "background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(./images/night.jpg);");
+      ? (document.body.style = `background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(${cloudImg});`)
+      : (document.body.style = `background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(${nightImg});`);
   }, [toggle]);
 
   // Check if time is day or night
