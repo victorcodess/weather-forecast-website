@@ -1,6 +1,6 @@
 .current {
   display: flex;
-  gap: 35px;
+  gap: 25px;
   justify-content: center;
   align-items: center;
   margin: 0;
@@ -47,6 +47,7 @@ sup {
 .current-weather__text {
   font-size: 1.5rem;
   font-weight: 500;
+  text-align: center;
 }
 
 @media only screen and (max-width: 720px) {
