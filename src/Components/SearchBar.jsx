@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = ({ setLoc, toggle }) => {
+const SearchBar = ({ setCity, toggle }) => {
   const [location, setLocation] = useState("");
 
   // Set the location state to the value of the input field
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoc(location);
+    setCity(location);
   };
 
   return (
