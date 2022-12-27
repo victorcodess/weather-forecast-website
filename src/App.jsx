@@ -26,12 +26,9 @@ function App() {
 
   // Check if time is day or night
   useEffect(() => {
-    const time = new Date().getHours();
-    if (time >= 6 && time < 18) {
-      setToggle(true);
-    } else {
-      setToggle(false);
-    }
+    const hour = new Date().getHours();
+    const isDay = hour >=6 && hour < 18; 
+    setToggle(isDay);
   }, []);
 
   // import the API key from .env file
