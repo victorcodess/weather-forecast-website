@@ -19,9 +19,7 @@ function App() {
 
   // Change the background image when the toggle state changes
   useEffect(() => {
-    toggle
-      ? (document.body.style = `background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(${cloudImg});`)
-      : (document.body.style = `background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(${nightImg});`);
+   document.body.style = `background-image:  linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(${toggle ? cloudImg : nightImg});`
   }, [toggle]);
 
   // Check if time is day or night
@@ -137,7 +135,7 @@ function App() {
           />
           <h1 className="logo__text">skyWatch</h1>
         </div>
-        <SearchBar setLoc={setLocation} toggle={toggle} />
+        <SearchBar setCity={setLocation} toggle={toggle} />
         <FontAwesomeIcon
           icon="fa-solid fa-circle-half-stroke"
           className="switch-mode"
